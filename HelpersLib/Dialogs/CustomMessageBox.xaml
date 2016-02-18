@@ -8,11 +8,7 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel Margin="15">
-        <TextBlock x:Name="Text" />
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 30 0 0">
-            <Button Name="Button1" Command="{x:Static md:DialogHost.CloseDialogCommand}" CommandParameter="1">Button1</Button>
-            <Button Name="Button2" Command="{x:Static md:DialogHost.CloseDialogCommand}" CommandParameter="2" Margin="10 0 0 0" Visibility="Collapsed">Button2</Button>
-            <Button Name="Button3" Command="{x:Static md:DialogHost.CloseDialogCommand}" CommandParameter="3" Margin="10 0 0 0" Visibility="Collapsed">Button3</Button>
-        </StackPanel>
+        <TextBlock Name="tbText" />
+        <StackPanel Name="spButtons" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 30 0 0" />
     </StackPanel>
 </UserControl>

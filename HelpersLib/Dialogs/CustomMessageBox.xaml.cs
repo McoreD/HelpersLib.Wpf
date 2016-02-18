@@ -1,27 +1,28 @@
-﻿using System.Windows;
+﻿using MaterialDesignThemes.Wpf;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace HelpersLib
 {
     public partial class CustomMessageBox : UserControl
     {
-        public CustomMessageBox(string text, string button1 = "Ok", string button2 = "", string button3 = "")
+        public CustomMessageBox(string text, params string[] buttons)
         {
             InitializeComponent();
-            Text.Text = text;
-            Button1.Content = button1;
 
-            if (!string.IsNullOrEmpty(button2))
-            {
-                Button2.Visibility = Visibility.Visible;
-                Button2.Content = button2;
-            }
+            tbText.Text = text;
 
-            Button2.Content = button2;
-            if (!string.IsNullOrEmpty(button3))
+            if (buttons != null)
             {
-                Button3.Visibility = Visibility.Visible;
-                Button3.Content = button3;
+                for (int i = 0; i < buttons.Length; i++)
+                {
+                    Button btn = new Button();
+                    btn.Content = buttons[i];
+                    btn.Command = DialogHost.CloseDialogCommand;
+                    btn.CommandParameter = i + 1;
+
+                    spButtons.Children.Add(btn);
+                }
             }
         }
     }
