@@ -12,6 +12,11 @@ namespace HelpersLib
 
             tbText.Text = text;
 
+            if (buttons != null || buttons.Length == 0)
+            {
+                buttons = new string[] { "Ok" };
+            }
+
             if (buttons != null)
             {
                 for (int i = 0; i < buttons.Length; i++)
