@@ -12,7 +12,7 @@ namespace HelpersLib
 
             tbText.Text = text;
 
-            if (buttons != null || buttons.Length == 0)
+            if (buttons == null || buttons.Length == 0)
             {
                 buttons = new string[] { "Ok" };
             }
