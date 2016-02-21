@@ -9,7 +9,7 @@
         Title="MainWindow" Height="350" Width="525">
     <md:DialogHost>
         <StackPanel>
-            <Button>Test</Button>
+            <Button x:Name="btnTest1" Click="btnTest1_Click">CustomMessageBox with two buttons</Button>
         </StackPanel>
     </md:DialogHost>
 </Window>

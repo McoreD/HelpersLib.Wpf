@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,21 @@ namespace HelpersLib.Demo
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private async void btnTest1_Click(object sender, RoutedEventArgs e)
+        {
+            CustomMessageBox dlg = new CustomMessageBox("Do you like Material Design?", "Yea!", "Nope!");
+            int result = (int)await DialogHost.Show(dlg);
+            switch (result)
+            {
+                case 1:
+                    // do things
+                    break;
+                case 2:
+                    // do things
+                    break;
+            }
         }
     }
 }

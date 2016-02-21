@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gat.Controls;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,26 @@ namespace HelpersLib
 {
     public static class Helpers
     {
+        public static string BrowseFolder(string title = "Browse folder")
+        {
+            OpenDialogView openDialog = new OpenDialogView();
+            OpenDialogViewModel vm = (OpenDialogViewModel)openDialog.DataContext;
+            vm.IsDirectoryChooser = true;
+            vm.Caption = title;
+            vm.DateFormat = OpenDialogViewModelBase.ISO8601_DateFormat;
+            vm.OpenText = "Select folder";
+            vm.SelectFolder = true;
+            // vm.Owner = this;
+            vm.StartupLocation = WindowStartupLocation.CenterScreen;
+
+            if (vm.Show() == true)
+            {
+                return string.IsNullOrEmpty(vm.SelectedFilePath) ? vm.SelectedFolder.Path : vm.SelectedFilePath;
+            }
+
+            return null;
+        }
+
         public static void CreateDirectoryIfNotExist(string path, bool isFilePath = true)
         {
             if (!string.IsNullOrEmpty(path))
@@ -27,7 +48,7 @@ namespace HelpersLib
                     }
                     catch (Exception e)
                     {
-                       DebugHelper.WriteException(e);
+                        DebugHelper.WriteException(e);
                     }
                 }
             }
