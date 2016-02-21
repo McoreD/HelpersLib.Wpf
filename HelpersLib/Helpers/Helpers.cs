@@ -25,7 +25,10 @@ namespace HelpersLib
 
             if (vm.Show() == true)
             {
-                return string.IsNullOrEmpty(vm.SelectedFilePath) ? vm.SelectedFolder.Path : vm.SelectedFilePath;
+                if (!string.IsNullOrEmpty(vm.SelectedFilePath))
+                    return vm.SelectedFilePath;
+                else if (vm.SelectedFolder != null && !string.IsNullOrEmpty(vm.SelectedFolder.Path))
+                    return vm.SelectedFolder.Path;
             }
 
             return null;
