@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HelpersLib")]
+[assembly: AssemblyTitle("HelpersLib for WPF Applications")]
 [assembly: AssemblyDescription("HelpersLib for WPF Applications")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ShareX Team")]
-[assembly: AssemblyProduct("HelpersLib")]
+[assembly: AssemblyProduct("HelpersLib for WPF Applications")]
 [assembly: AssemblyCopyright("Copyright © ShareX Team 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
