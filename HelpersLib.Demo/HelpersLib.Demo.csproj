@@ -110,7 +110,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HelpersLib\HelpersLib.csproj">
+    <ProjectReference Include="..\HelpersLib\HelpersLib.Wpf.csproj">
       <Project>{43b77ceb-6410-43ad-842e-726a129fa4bb}</Project>
       <Name>HelpersLib</Name>
     </ProjectReference>

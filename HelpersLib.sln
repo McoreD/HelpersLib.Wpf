@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpersLib", "HelpersLib\HelpersLib.csproj", "{43B77CEB-6410-43AD-842E-726A129FA4BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpersLib", "HelpersLib\HelpersLib.Wpf.csproj", "{43B77CEB-6410-43AD-842E-726A129FA4BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpersLib.Demo", "HelpersLib.Demo\HelpersLib.Demo.csproj", "{AA7DFFC7-92ED-45A4-B7F1-B781EA6FBA49}"
 EndProject
