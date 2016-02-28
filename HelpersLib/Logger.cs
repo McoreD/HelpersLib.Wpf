@@ -31,7 +31,7 @@ namespace HelpersLib
         {
             FileWrite = true;
             LogFilePath = logFilePath;
-            Helpers.CreateDirectoryIfNotExist(LogFilePath);
+            Helpers.CreateDirectoryFromFilePath(LogFilePath);
         }
 
         protected void OnMessageAdded(string message)

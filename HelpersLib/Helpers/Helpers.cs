@@ -34,26 +34,26 @@ namespace HelpersLib
             return null;
         }
 
-        public static void CreateDirectoryIfNotExist(string path, bool isFilePath = true)
+        public static void CreateDirectoryFromDirectoryPath(string path)
+        {
+            if (!string.IsNullOrEmpty(path) && !Directory.Exists(path))
+            {
+                try
+                {
+                    Directory.CreateDirectory(path);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
+                }
+            }
+        }
+
+        public static void CreateDirectoryFromFilePath(string path)
         {
             if (!string.IsNullOrEmpty(path))
             {
-                if (isFilePath)
-                {
-                    path = Path.GetDirectoryName(path);
-                }
-
-                if (!string.IsNullOrEmpty(path) && !Directory.Exists(path))
-                {
-                    try
-                    {
-                        Directory.CreateDirectory(path);
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-                    }
-                }
+                CreateDirectoryFromDirectoryPath(Path.GetDirectoryName(path));
             }
         }
     }

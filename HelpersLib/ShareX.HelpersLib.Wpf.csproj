@@ -67,10 +67,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaptureHelpers.cs" />
-    <Compile Include="ClipboardHelper.cs" />
+    <Compile Include="Helpers\CaptureHelpers.cs" />
+    <Compile Include="Helpers\ClipboardHelper.cs" />
     <Compile Include="CursorData.cs" />
-    <Compile Include="DebugHelper.cs" />
+    <Compile Include="Helpers\DebugHelper.cs" />
     <Compile Include="Dialogs\CustomMessageBox.xaml.cs">
       <DependentUpon>CustomMessageBox.xaml</DependentUpon>
     </Compile>
