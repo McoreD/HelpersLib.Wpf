@@ -8,7 +8,7 @@ using System.Windows.Threading;
 
 namespace HelpersLib
 {
-    public static class Extensions
+    public static class UIElementExtensions
     {
         private static Action EmptyDelegate = delegate () { };
 
