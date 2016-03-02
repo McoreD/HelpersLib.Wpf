@@ -40,5 +40,9 @@ namespace HelpersLib.Demo
                     break;
             }
         }
+
+        private void btnBrowseFolder_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

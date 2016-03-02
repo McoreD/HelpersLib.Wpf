@@ -1,5 +1,4 @@
-﻿using Gat.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,22 +12,11 @@ namespace HelpersLib
     {
         public static string BrowseFolder(string title = "Browse folder")
         {
-            OpenDialogView openDialog = new OpenDialogView();
-            OpenDialogViewModel vm = (OpenDialogViewModel)openDialog.DataContext;
-            vm.IsDirectoryChooser = true;
-            vm.Caption = title;
-            vm.DateFormat = OpenDialogViewModelBase.ISO8601_DateFormat;
-            vm.OpenText = "Select folder";
-            vm.SelectFolder = true;
-            // vm.Owner = this;
-            vm.StartupLocation = WindowStartupLocation.CenterScreen;
+            FolderDialog dlg = new FolderDialog();
 
-            if (vm.Show() == true)
+            if (dlg.ShowDialog())
             {
-                if (!string.IsNullOrEmpty(vm.SelectedFilePath))
-                    return vm.SelectedFilePath;
-                else if (vm.SelectedFolder != null && !string.IsNullOrEmpty(vm.SelectedFolder.Path))
-                    return vm.SelectedFolder.Path;
+                return dlg.Path;
             }
 
             return null;

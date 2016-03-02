@@ -10,6 +10,7 @@
     <md:DialogHost>
         <StackPanel>
             <Button x:Name="btnTest1" Click="btnTest1_Click">CustomMessageBox with two buttons</Button>
+            <Button Name="btnBrowseFolder" Click="btnBrowseFolder_Click">FolderDialog</Button>
         </StackPanel>
     </md:DialogHost>
 </Window>

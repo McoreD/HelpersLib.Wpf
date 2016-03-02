@@ -23,13 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using HelpersLib;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Media.Imaging;
 
-namespace ShareX.HelpersLib
+namespace HelpersLib
 {
     public class CursorData : IDisposable
     {

@@ -28,7 +28,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Runtime.InteropServices;
 
-namespace ShareX.HelpersLib
+namespace HelpersLib
 {
     [StructLayout(LayoutKind.Sequential)]
     public struct RECT
