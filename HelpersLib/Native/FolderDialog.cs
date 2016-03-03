@@ -25,9 +25,9 @@
 
 // http://www.lyquidity.com/devblog/?p=136
 
-using Microsoft.Win32;
 using System;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace HelpersLib
 {
@@ -113,10 +113,11 @@ namespace HelpersLib
         {
             bool flag;
 
-            Reflector r = new Reflector("Microsoft.Win32");
+            // TODO: Find way to use Microsoft.Win32
+            Reflector r = new Reflector("System.Windows.Forms");
 
             uint num = 0;
-            Type typeIFileDialog = r.GetType("FileDialog");
+            Type typeIFileDialog = r.GetType("FileDialogNative.IFileDialog");
             object dialog = r.Call(ofd, "CreateVistaDialog");
             r.Call(ofd, "OnBeforeVistaDialog", dialog);
 
@@ -233,7 +234,7 @@ namespace HelpersLib
             string[] names = typeName.Split('.');
 
             if (names.Length > 0)
-                type = m_asmb.GetType(m_ns + "." + names[0]);
+                type = m_asmb.GetType($"{m_ns}.{names[0]}");
 
             for (int i = 1; i < names.Length; ++i)
             {

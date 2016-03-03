@@ -43,6 +43,8 @@ namespace HelpersLib.Demo
 
         private void btnBrowseFolder_Click(object sender, RoutedEventArgs e)
         {
+            FolderDialog dlg = new FolderDialog();
+            dlg.ShowDialog();
         }
     }
 }
