@@ -56,7 +56,7 @@ namespace HelpersLib
 
                     if (NativeMethods.GetIconInfo(IconHandle, out iconInfo))
                     {
-                        Point cursorPosition = CaptureHelpers.GetZeroBasedMousePosition();
+                        Point cursorPosition = CaptureHelper.GetZeroBasedMousePosition();
                         Position = new Point(cursorPosition.X - iconInfo.xHotspot, cursorPosition.Y - iconInfo.yHotspot);
 
                         if (iconInfo.hbmMask != IntPtr.Zero)

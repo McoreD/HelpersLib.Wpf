@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace HelpersLib
 {
-    public static class Helpers
+    public static class Helper
     {
         public static string BrowseFolder(string title = "Browse folder")
         {

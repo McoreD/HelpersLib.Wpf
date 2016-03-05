@@ -66,7 +66,7 @@
   <ItemGroup>
     <Compile Include="Extensions\UIElementExtensions.cs" />
     <Compile Include="Native\FolderDialog.cs" />
-    <Compile Include="Helpers\CaptureHelpers.cs" />
+    <Compile Include="Helpers\CaptureHelper.cs" />
     <Compile Include="Helpers\ClipboardHelper.cs" />
     <Compile Include="CursorData.cs" />
     <Compile Include="Helpers\DebugHelper.cs" />
@@ -76,8 +76,8 @@
     <Compile Include="Dialogs\LoginBox.xaml.cs">
       <DependentUpon>LoginBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\Helpers.cs" />
-    <Compile Include="Helpers\ImageHelpers.cs" />
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Native\NativeConstants.cs" />
     <Compile Include="Native\NativeStructs.cs" />

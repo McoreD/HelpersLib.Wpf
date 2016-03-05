@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 
 namespace HelpersLib
 {
-    public static class ImageHelpers
+    public static class ImageHelper
     {
         public static BitmapSource CropImage(BitmapSource img, Rect rect)
         {

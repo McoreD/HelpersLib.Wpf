@@ -2,7 +2,7 @@
 
 namespace HelpersLib
 {
-    public static class CaptureHelpers
+    public static class CaptureHelper
     {
         public static Rect GetScreenBounds()
         {
