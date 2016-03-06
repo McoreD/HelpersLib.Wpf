@@ -24,9 +24,9 @@
 #endregion License Information (GPL v3)
 
 using System;
-using System.Drawing;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Windows;
 
 namespace HelpersLib
 {
@@ -43,8 +43,8 @@ namespace HelpersLib
             Bottom = bottom;
         }
 
-        public RECT(Rectangle r)
-            : this(r.Left, r.Top, r.Right, r.Bottom)
+        public RECT(Rect r)
+            : this((int)r.Left, (int)r.Top, (int)r.Right, (int)r.Bottom)
         {
         }
 
@@ -75,21 +75,21 @@ namespace HelpersLib
         public Point Location
         {
             get { return new Point(Left, Top); }
-            set { X = value.X; Y = value.Y; }
+            set { X = (int)value.X; Y = (int)value.Y; }
         }
 
         public Size Size
         {
             get { return new Size(Width, Height); }
-            set { Width = value.Width; Height = value.Height; }
+            set { Width = (int)value.Width; Height = (int)value.Height; }
         }
 
-        public static implicit operator Rectangle(RECT r)
+        public static implicit operator Rect(RECT r)
         {
-            return new Rectangle(r.Left, r.Top, r.Width, r.Height);
+            return new Rect(r.Left, r.Top, r.Width, r.Height);
         }
 
-        public static implicit operator RECT(Rectangle r)
+        public static implicit operator RECT(Rect r)
         {
             return new RECT(r);
         }
@@ -116,9 +116,9 @@ namespace HelpersLib
                 return Equals((RECT)obj);
             }
 
-            if (obj is Rectangle)
+            if (obj is Rect)
             {
-                return Equals(new RECT((Rectangle)obj));
+                return Equals(new RECT((Rect)obj));
             }
 
             return false;
@@ -126,7 +126,7 @@ namespace HelpersLib
 
         public override int GetHashCode()
         {
-            return ((Rectangle)this).GetHashCode();
+            return ((Rect)this).GetHashCode();
         }
 
         public override string ToString()
@@ -154,7 +154,7 @@ namespace HelpersLib
 
         public static explicit operator SIZE(Size s)
         {
-            return new SIZE(s.Width, s.Height);
+            return new SIZE((int)s.Width, (int)s.Height);
         }
 
         public override string ToString()
@@ -182,7 +182,7 @@ namespace HelpersLib
 
         public static explicit operator POINT(Point p)
         {
-            return new POINT(p.X, p.Y);
+            return new POINT((int)p.X, (int)p.Y);
         }
     }
 

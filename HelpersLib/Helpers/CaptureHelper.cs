@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace HelpersLib
 {
@@ -20,6 +21,11 @@ namespace HelpersLib
             int screenX = NativeMethods.GetSystemMetrics(SystemMetric.SM_XVIRTUALSCREEN);
             int screenY = NativeMethods.GetSystemMetrics(SystemMetric.SM_YVIRTUALSCREEN);
             return new Point(p.X - screenX, p.Y - screenY);
+        }
+
+        public static Rect ScreenToClient(Rect r)
+        {
+            return new Rect(ScreenToClient(r.Location), r.Size);
         }
 
         public static Point GetCursorPosition()
@@ -74,6 +80,33 @@ namespace HelpersLib
         public static Rect CreateRectangle(double x1, double y1, double x2, double y2)
         {
             return CreateRectangle((int)x1, (int)y1, (int)x2, (int)y2);
+        }
+
+        public static Rect GetWindowRectangle(IntPtr handle)
+        {
+            Rect rect = Rect.Empty;
+
+            if (NativeMethods.IsDWMEnabled())
+            {
+                Rect tempRect;
+
+                if (NativeMethods.GetExtendedFrameBounds(handle, out tempRect))
+                {
+                    rect = tempRect;
+                }
+            }
+
+            if (rect.IsEmpty)
+            {
+                rect = NativeMethods.GetWindowRect(handle);
+            }
+
+            if (!Helper.IsWindows10OrGreater() && NativeMethods.IsZoomed(handle))
+            {
+                rect = NativeMethods.MaximizedWindowFix(handle, rect);
+            }
+
+            return rect;
         }
     }
 }

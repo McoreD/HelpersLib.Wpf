@@ -64,8 +64,13 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\UIElementExtensions.cs" />
+    <Compile Include="HelperOptions.cs" />
+    <Compile Include="Helpers\MathHelper.cs" />
+    <Compile Include="Native\NativeMethods_Helper.cs" />
     <Compile Include="Native\FolderDialog.cs" />
     <Compile Include="Helpers\CaptureHelper.cs" />
     <Compile Include="Helpers\ClipboardHelper.cs" />
@@ -84,6 +89,7 @@
     <Compile Include="Native\NativeStructs.cs" />
     <Compile Include="Native\NativeEnums.cs" />
     <Compile Include="Native\NativeMethods.cs" />
+    <Compile Include="NumberExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -99,6 +105,10 @@
     </Compile>
     <Compile Include="SimpleCommand.cs" />
     <Compile Include="Extensions\WindowExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="TaskEx.cs" />
+    <Compile Include="URLHelper.cs" />
+    <Compile Include="Vector2.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
