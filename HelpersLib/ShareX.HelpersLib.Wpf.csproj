@@ -64,6 +64,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\UIElementExtensions.cs" />
     <Compile Include="Native\FolderDialog.cs" />
     <Compile Include="Helpers\CaptureHelper.cs" />

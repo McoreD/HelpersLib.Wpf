@@ -44,5 +44,15 @@ namespace HelpersLib
                 CreateDirectoryFromDirectoryPath(Path.GetDirectoryName(path));
             }
         }
+
+        public static T[] GetEnums<T>()
+        {
+            return (T[])Enum.GetValues(typeof(T));
+        }
+
+        public static string[] GetEnumDescriptions<T>()
+        {
+            return Enum.GetValues(typeof(T)).OfType<Enum>().Select(x => x.GetDescription()).ToArray();
+        }
     }
 }
